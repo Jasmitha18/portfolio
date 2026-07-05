@@ -379,6 +379,8 @@ section { position: relative; z-index: 1; }
   font-size: .82rem;
   font-weight: 500;
   margin-top: .3rem;
+  position: relative;
+  z-index: 2;
   transition: gap .2s;
 }
 .project-link:hover { gap: .7rem; }
@@ -499,6 +501,28 @@ footer {
   z-index: 1;
 }
 footer span { color: var(--accent2); }
+
+.demo-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(16px);
+  background: rgba(17, 17, 24, 0.95);
+  border: 1px solid rgba(124, 106, 255, 0.35);
+  color: var(--text);
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 9999;
+}
+.demo-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
 
 /* ── Scroll animations ── */
 .reveal {
